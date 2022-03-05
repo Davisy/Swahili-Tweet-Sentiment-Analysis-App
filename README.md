@@ -1,4 +1,4 @@
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/davisy/swahili-news-classifier-streamlit-app/app.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/davisy/swahili-tweet-sentiment-analysis-app/app.py)
 ![MIT LICENSE](https://badgen.net//badge/license/MIT/green)   ![MAINTAINED BADGE](https://img.shields.io/badge/Maintained%3F-yes-green.svg) 
 
 # Swahili Tweet Sentiment Analysis App
@@ -22,7 +22,7 @@ Finally browse the link provided in your browser.
 
 ## Streamlit Cloud
 
-The application has been deployed in the Streamlit Cloud.You can access here: [https://share.streamlit.io/davisy/swahili-news-classifier-streamlit-app/app.py](https://share.streamlit.io/davisy/swahili-news-classifier-streamlit-app/app.py)
+The application has been deployed in the Streamlit Cloud.You can access here: [https://share.streamlit.io/davisy/swahili-tweet-sentiment-analysis-app/app.py](https://share.streamlit.io/davisy/swahili-tweet-sentiment-analysis-app/app.py)
 
 
 
