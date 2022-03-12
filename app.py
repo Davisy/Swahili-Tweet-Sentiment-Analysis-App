@@ -2,6 +2,7 @@ import streamlit as st
 import requests as r
 from os.path import dirname, join, realpath
 import joblib
+from langdetect import detect
 
 # add banner image
 st.header("Swahili Tweet Sentiment Analysis App")
@@ -33,22 +34,27 @@ sentiments = {0: "Neutral", 1: "Positive", -1: "Negative"}
 
 if submit:
 
-    # transform the input
-    transformed_tweet = vectorizer.transform([tweet])
+    if detect(tweet) == "sw":
 
-    # perform prediction
-    prediction = model.predict(transformed_tweet)
-    output = int(prediction[0])
-    probas = model.predict_proba(transformed_tweet)
-    probability = "{:.2f}".format(float(probas[:, output]))
+        # transform the input
+        transformed_tweet = vectorizer.transform([tweet])
 
-    # Display results of the NLP task
-    st.header("Results")
-    if output == 1:
-        st.write("The sentiment of the tweet is {} 😊".format(sentiments[output]))
-    elif output == -1:
-        st.write("The sentiment of the tweet is {} 😡 ".format(sentiments[output]))
+        # perform prediction
+        prediction = model.predict(transformed_tweet)
+        output = int(prediction[0])
+        probas = model.predict_proba(transformed_tweet)
+        probability = "{:.2f}".format(float(probas[:, output]))
+
+        # Display results of the NLP task
+        st.header("Results")
+        if output == 1:
+            st.write("The sentiment of the tweet is {} 😊".format(sentiments[output]))
+        elif output == -1:
+            st.write("The sentiment of the tweet is {} 😡 ".format(sentiments[output]))
+        else:
+            st.write("The sentiment of the tweet is {} 😐".format(sentiments[output]))
+
     else:
-        st.write("The sentiment of the tweet is {} 😐".format(sentiments[output]))
+        st.write(" ⚠️ The tweet is not in swahili language.Please make sure the input is in swahili language")
 
 st.write("Developed with ❤️ by Davis David")
