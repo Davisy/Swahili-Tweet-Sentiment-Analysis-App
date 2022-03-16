@@ -57,4 +57,5 @@ if submit:
     else:
         st.write(" ⚠️ The tweet is not in swahili language.Please make sure the input is in swahili language")
 
-st.write("Developed with ❤️ by Davis David")
+url = "https://twitter.com/Davis_McDavid"
+st.write("Developed with ❤️ by [Davis David](%s)" % url)
